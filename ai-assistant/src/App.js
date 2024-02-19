@@ -74,7 +74,7 @@ function App() {
 
 			<Header />
 			
-			<div className="scrollable-box border-red-600 border-2">
+			<div className="scrollable-box">
 				{renderAnswers()}
 			</div>
 
