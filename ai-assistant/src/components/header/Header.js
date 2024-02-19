@@ -3,9 +3,9 @@ import Logo from "./Logo"
 
 function Header() {
   return (
-    <div className="  justify-center items-align-center w-screen">
+    <div className="flex justify-start items-center w-screen">
         <Logo />
-        <h2>Billy</h2>
+        <h1 className='text-[#DFD9FF] text-[26px] font-bold ml-[20px]'>AI Assistant</h1>
     </div>
   )
 }

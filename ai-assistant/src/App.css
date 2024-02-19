@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  position: relative;
 }
 .scrollable-box {
   width: 100%;
@@ -42,4 +43,69 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.loading-data-container {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    overflow: hidden;
+    /* position: relative; */
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-top: 4rem; 
+    /* background-color: black;  */
+    box-shadow: 0px 5px 7px 10px #915EFF;
+    animation: text-color 2.5s ease-in-out infinite;
+}
+.spinner-sector {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 15px solid transparent;
+    animation: rotate var(--duration) var(--timing) infinite;
+}
+.spinner-red {
+    border-top-color: #915EFF;
+    --duration: 1.5s;
+    --timing: ease-in-out;
+}
+.spinner-blue {
+    border-left-color: #915EFF;
+    --duration: 2s;
+    --timing: ease-in;
+}
+.spinner-yellow {
+    border-right-color: #915EFF;
+    --duration: 2.5s;
+    --timing: ease-out;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes text-color {
+    0%, 100% {
+        color: #DFD9FF;
+    }
+    25%, 75% {
+        color: rgba(223, 217, 255, 0.5);
+    }
+    50% {
+        color: #DFD9FF;
+    }
 }
