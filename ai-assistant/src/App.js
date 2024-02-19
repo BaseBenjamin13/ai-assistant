@@ -14,14 +14,14 @@ import Loading from "./components/global/Loading";
 function App() {
 
     const ai = new OpenAI({ apiKey: process.env.REACT_APP_API_KEY, dangerouslyAllowBrowser: true })
-    const [answers, setAnswers] = useState([])
+    const [answers, setAnswers] = useState([{message: {content: "Hello! How can I assist you today?"}}])
     const [isLoading, setIsLoading] = useState(false)
     const scrollViewRef = useRef(null);
 
     const handleQuestion = async (e) => {
-        setIsLoading(true)
         e.preventDefault()
-        console.log(e.target[0].value)
+
+        setIsLoading(true)
         await ai.chat.completions.create({
             model: "gpt-3.5-turbo",
             messages: [{ role: "user", content: e.target[0].value }],
